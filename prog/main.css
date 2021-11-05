@@ -1,0 +1,108 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: black;
+	color: white;
+	font-family: arial;
+}
+
+header {
+	margin: auto;
+	background: rgba(116, 221, 146, 0.2);
+}
+header .container {
+	padding: 0 15px 0 15px;
+}
+
+.logo {
+  float: left; /* обтекание которое нужно будет отменить */
+  background: url(KINO.gif);
+}
+nav {
+  float: right;
+
+}
+nav ul {
+  margin: 15px;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block; /*один из способов разместить элементы в строку*/
+  margin-left: 10px; 
+}
+nav a {
+  text-decoration: none;
+  line-height: 45px;
+  color: white;
+}
+
+.container {
+	width: 65%;
+ 	max-width: ;
+ 	min-width: 1024px;
+ 	padding: 15px;
+  	margin: 0 auto;
+	background: rgba(11, 22, 146, 0);
+}
+.container:after, .row:after{
+  content: ""; /* очищаем содержимое потока*/
+  display: table; /* берём табличный вид*/
+  clear: both; /*Отменяем обтекание */
+}
+.row {
+  margin-bottom: 15px;
+}
+.row1 .col-40 {
+	height: ;
+}
+.row1 .col-60 {
+	
+	height: ;
+}
+.col-50 {
+  width: 50%;
+  float: left;
+  background: rgba(222, 115, 195,0.5);
+}
+.col-33 {
+  width: 33.3333333333%;
+  float: left;
+  background: rgba(115, 116, 222,0.5);
+}
+.col-25 {
+  width: 25%;
+  float: left;
+  background: rgba(222, 139, 115,0.5);
+}
+.col-66 {
+  width: 66.6666666667%;
+  float: left;
+  background: rgba(138, 222, 115,0.5);
+}
+.col-40 {
+	width: 40%;
+	float: left;
+}
+.col-60 {
+	width: 60%;
+	float: left;
+}
+
+.col-50, .col-25, .col-33, .col-66, .col-40, .col-60{
+	min-height: 50px;
+}
+
+footer {
+	margin: auto;
+	background: rgba(16, 221, 46, 0.2);
+}
+
+.topper {
+	background: yellow;
+	width: 30px;
+	height: 30px;
+	bottom: 50px;
+	right: 50px;
+	position: fixed;
+}
