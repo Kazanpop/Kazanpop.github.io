@@ -40,52 +40,52 @@
 			 		
 			 		<p>
 
-						#include <cs50.h>
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#include <math.h>
-
-int main()
-{
-    string text = get_string("Text: ");
-    int letterscount = 0;
-    int wordcount = 1;
-    int sentencecount = 0;
-
-//count words
-    for (int i = 0; i < strlen(text); i++)
-    {
-       if ((text[i] >= 'a' && text[i] <= 'z') || (text[i] >= 'A' && text[i] <= 'Z'))
-       {
-           letterscount++;
-       }
-       else if (text[i] == ' ')
-       {
-           wordcount++;
-       }
-       else if (text[i] == '.' || text[i] == '!' || text[i] == '?')
-       {
-           sentencecount++;
-       }
-    }
-//    printf("letters: %i; words: %i; sentences: %i\n", letterscount, wordcount, sentencecount);
-
-    float grade = 0.0588 * (100 * (float) letterscount / (float) wordcount) - 0.296 *(100 * (float) sentencecount / (float) wordcount) - 15.8;
-    if (grade < 16 && grade >= 0)
-    {
-        printf("Grade %i\n", (int) round(grade));
-    }
-    else if (grade >= 16)
-    {
-        printf("Grade 16+\n");
-    }
-    else
-    {
-        printf("Before Grade 1\n");
-    }
-
-}
+						#include <cs50.h><br>
+#include <stdio.h><br>
+#include <ctype.h><br>
+#include <string.h><br>
+#include <math.h><br>
+<br>
+int main()<br>
+{<br>
+    string text = get_string("Text: ");<br>
+    int letterscount = 0;<br>
+    int wordcount = 1;<br>
+    int sentencecount = 0;<br>
+<br>
+//count words<br>
+    for (int i = 0; i < strlen(text); i++)<br>
+    {<br>
+       if ((text[i] >= 'a' && text[i] <= 'z') || (text[i] >= 'A' && text[i] <= 'Z'))<br>
+       {<br>
+           letterscount++;<br>
+       }<br>
+       else if (text[i] == ' ')<br>
+       {<br>
+           wordcount++;<br>
+       }<br>
+       else if (text[i] == '.' || text[i] == '!' || text[i] == '?')<br>
+       {<br>
+           sentencecount++;<br>
+       }<br>
+    }<br>
+//    printf("letters: %i; words: %i; sentences: %i\n", letterscount, wordcount, sentencecount);<br>
+<br>
+    float grade = 0.0588 * (100 * (float) letterscount / (float) wordcount) - 0.296 *(100 * (float) sentencecount / (float) wordcount) - 15.8;<br>
+    if (grade < 16 && grade >= 0)<br>
+    {<br>
+        printf("Grade %i\n", (int) round(grade));<br>
+    }<br>
+    else if (grade >= 16)<br>
+    {<br>
+        printf("Grade 16+\n");<br>
+    }<br>
+    else<br>
+    {<br>
+        printf("Before Grade 1\n");<br>
+    }<br>
+<br>
+}<br>
 					</p>
 					<p>
 					Да, пусть их преступная деятельность и приносила немало проблем, но технический прогресс и ведение бизнеса зависели именно от представителей этого семейства. Главные действующие лица продолжали трудиться во благо себя и местных жителей, но чаще всего приходилось сводить счёты с представителями других банд. Многочисленные столкновения интересов, криминальные стычки и многое-многое другое - вот, чем жили криминальные группировки того времени.
