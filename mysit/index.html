@@ -40,7 +40,52 @@
 			 		
 			 		<p>
 
-					Шелби держат в страхе весь Бирмингем. Их банда - одна из самых влиятельных в городе. О проделках этих гангстеров ходят легенды, ведь в двадцатые годы прошлого века после завершения Первой Мировой Войны именно они стали не только главной проблемой целого государства, но и одними из двигателей прогресса в Бирмингеме.
+						#include <cs50.h>
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <math.h>
+
+int main()
+{
+    string text = get_string("Text: ");
+    int letterscount = 0;
+    int wordcount = 1;
+    int sentencecount = 0;
+
+//count words
+    for (int i = 0; i < strlen(text); i++)
+    {
+       if ((text[i] >= 'a' && text[i] <= 'z') || (text[i] >= 'A' && text[i] <= 'Z'))
+       {
+           letterscount++;
+       }
+       else if (text[i] == ' ')
+       {
+           wordcount++;
+       }
+       else if (text[i] == '.' || text[i] == '!' || text[i] == '?')
+       {
+           sentencecount++;
+       }
+    }
+//    printf("letters: %i; words: %i; sentences: %i\n", letterscount, wordcount, sentencecount);
+
+    float grade = 0.0588 * (100 * (float) letterscount / (float) wordcount) - 0.296 *(100 * (float) sentencecount / (float) wordcount) - 15.8;
+    if (grade < 16 && grade >= 0)
+    {
+        printf("Grade %i\n", (int) round(grade));
+    }
+    else if (grade >= 16)
+    {
+        printf("Grade 16+\n");
+    }
+    else
+    {
+        printf("Before Grade 1\n");
+    }
+
+}
 					</p>
 					<p>
 					Да, пусть их преступная деятельность и приносила немало проблем, но технический прогресс и ведение бизнеса зависели именно от представителей этого семейства. Главные действующие лица продолжали трудиться во благо себя и местных жителей, но чаще всего приходилось сводить счёты с представителями других банд. Многочисленные столкновения интересов, криминальные стычки и многое-многое другое - вот, чем жили криминальные группировки того времени.
