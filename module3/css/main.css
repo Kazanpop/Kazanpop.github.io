@@ -1,0 +1,150 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: RobotoR;
+	src: url(../fonts/Roboto-Regular.ttf);
+}
+
+html, body, main {
+	height: 100%;
+	font-family: RobotoR;
+}
+
+.first {
+	height: 100%;
+	background-image: url(../img/img1.jpg);
+	background-position: center;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+.first p {
+	color: white;
+}
+
+.tourism {
+	width: 100%;
+	text-align: center;
+	padding-top: 80px;
+	font-size: 20px;
+}
+
+.text-container {
+	width: 40%;
+	margin-left: 15%;
+	margin-top: 15%;
+}
+
+.first-line {
+	text-transform: uppercase;
+	font-size: 26px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	opacity: 0.5;
+	line-height: 1;
+}
+
+.second-line {
+	text-transform: uppercase;
+	font-size: 64px;
+	line-height: 1;
+	font-weight: bold;
+	letter-spacing: 5px;
+}
+
+.third-line {
+	font-size: 20px;
+}
+
+.second {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+}
+
+.gallery-container {
+	width: 60%;
+	max-width: 1000px;
+}
+
+.img-container {
+	width: 100%;
+	display: flex;
+	-ms-align-items: flex-start;
+	align-items: flex-start;
+}
+
+img {
+	display: block;	
+	max-width: 100%;
+	height: auto;
+	box-shadow: 0 0 10px 1px rgba(0,0,0,.3);
+}
+
+.img1 {
+	width: 55%;
+}
+
+.wrapper {
+	margin-left: 20px;
+}
+
+.img2 {
+	margin-bottom: 20px;
+}
+
+.gallery-text {
+	display: flex;
+	justify-content: space-between;
+	-ms-align-items: center;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.gallery-header {
+	font-size: 48px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	line-height: 1;
+}
+
+.gallery-p {
+	font-size: 18px;
+}
+
+.last-container {
+	display: flex;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+	flex-direction: column;
+	height: 300px;
+	padding: 0 25%;
+	background-image: url(../img/img3.jpg);
+	background-position: center;
+	-webkit-background-size: cover;
+	background-size: cover;
+	font-family: Roboto;
+}
+
+.last-header {
+	color: white;
+	font-size: 20px;
+	padding: 10px 20px;
+	border: 1px solid white;
+	margin-bottom: 40px;
+}
+
+.last-text {
+	color: white;
+	font-size: 16px;
+	text-align: center;
+	line-height: 1.5;
+	letter-spacing: 1px;
+}
