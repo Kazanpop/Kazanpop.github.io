@@ -1,0 +1,140 @@
+* {
+	padding: 0;
+	margin: 0;
+	display: border-box;
+}
+
+.audio-track {
+    width: 150px;
+    height: 3px;
+    background-color: #dddddd;
+    margin: 20px 0
+}
+ 
+.time {
+    width: 0;
+    height: 3px;
+    background-color: #474747
+}
+
+.starter {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	background: url("../image/start.png") no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+.music {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background: url("../image/mus.jpg") no-repeat;
+	background-size: cover;
+	background-position: center;
+	display: ;
+}
+
+.stop {
+	width: 300px;
+	height: 40px;
+	
+	margin-top: 660px;
+	margin-left: 50%;
+	position: absolute;
+	text-align: center;
+	line-height: 2;
+}
+
+main {
+	display: none;
+	width: 1366px;
+}
+img {
+	width: 1366px;
+	position: absolute;
+	z-index: 0;
+	display: none;
+	opacity: 0;
+	margin-top: -86px;
+}
+
+.telo {
+	width: 1366px;
+	height: 768px;
+	display: block;
+	background: url("../image/fon0.jpg") no-repeat;
+	background-size: cover;
+	background-position: bottom;
+	z-index: 3;
+}
+
+.pashalka {
+	
+	position: absolute;
+	z-index: 100;
+}
+.g1 {
+	margin-top: 185px;
+	margin-left: 473px;
+	width: 10px;
+	height: 10px;
+	transform: skewX(6deg);
+	transform: skewY(16deg);
+}
+.g2 {
+	margin-top: 122px;
+	margin-left: 788px;
+	width: 20px;
+	height: 20px;
+	transform: skewX(6deg);
+	transform: skewY(16deg);
+}
+
+.g3 {
+	margin-top: 430px;
+	margin-left: 175px;
+	width: 60px;
+	height: 60px;
+	transform: rotate(-31deg);
+}
+.g4 {
+	margin-top: 325px;
+	margin-left:  503px;
+	width: 10px;
+	height: 30px;
+	transform: rotate(-10deg);
+}
+.g5 {
+	margin-top: 580px;
+	margin-left:  140px;
+	width: 40px;
+	height: 40px;
+	transform: rotate(-31deg);
+}
+.g6 {
+	margin-top: 390px;
+	margin-left: 1125px;
+	width: 10px;
+	height: 10px;
+	transform: rotate(-31deg);
+}
+.g7 {
+	margin-top: 115px;
+	margin-left:  160px;
+	width: 200px;
+	height: 115px;
+	transform: rotate(-21deg);
+}
+.g8 {
+	margin-top: 410px;
+	margin-left: 1301px;
+	width: 30px;
+	height: 50px;
+	transform: rotate(22deg);
+}
+
+
