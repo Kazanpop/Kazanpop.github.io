@@ -1,0 +1,52 @@
+body{
+ background:rgb(221, 190, 242); 
+ color: rgb(0, 0, 0);
+ font-family: arial black;
+}
+header{
+	margin: auto;
+	line-height: 3;
+	width: 100%;
+	background: rgb(208, 145, 250);
+	margin-bottom: 50px;
+}
+.main{
+	display: flex;
+	flex-wrap: wrap;
+
+}
+nav{
+	float: right;
+}
+nav ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+nav li{
+	display: inline-block;
+	margin-left: 10px; 
+}
+nav a{
+	text-decoration: none;
+	color: rgb(163, 154, 162);
+	line-height: 45px;
+}
+footer{
+	margin: auto;
+	height: 100px;
+	width: 100%;
+	background: rgb(0, 134, 217);
+}
+.space { 
+    padding: 20px; /* Поля */
+    background: rgb(80, 221, 255); /* Цвет фона */
+    border: 2px solid #79a2ac; /* Параметры рамки */
+    width: 50%;
+    margin: 5px auto;
+    min-height: 500px;
+   }
+  .fan {
+  	width: 50%;
+
+  }

@@ -1,0 +1,44 @@
+body{
+  background: rgb(98, 191, 131);
+ color:#002d10;
+ font-family: COMIC SANS MS;
+}
+header{
+	margin: auto;
+	line-height: 3;
+	width: 100%;
+	background:#258748;
+     color: rgb(0, 0, 0);
+}
+.conteiner{
+	width: 100%;
+	max-width: 1024px;
+	padding: 0 15px;
+	margin: 0 auto;
+	
+}
+.conteiner:after, .row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.row{
+	margin-bottom: 15px;
+}
+.row1{
+min-height: 100px;
+}
+.row1 .col-2-3{
+	padding-left: 1%;
+	width: 65.6666666667%;
+}
+.toper {
+	width: 30px;
+	height: 30px;
+	bottom: 50px;
+	right: 50px;
+	position: fixed;
+}
+.rew{
+	color: #b50074;	
+}

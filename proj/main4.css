@@ -1,0 +1,43 @@
+body{
+  background: rgb(255, 255, 255);
+ color: rgb(0, 0, 0);
+ font-family: COMIC SANS MS;
+}
+header{
+	margin: auto;
+	line-height: 3;
+	width: 100%;
+	background: #5CCCCC;
+     color: rgb(0, 0, 0);
+}
+.conteiner{
+	width: 100%;
+	max-width: 1024px;
+	padding: 0 15px;
+	margin: 0 auto;
+	
+}
+.conteiner:after, .row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.row{
+	margin-bottom: 15px;
+}
+.row1{
+min-height: 100px;
+}
+.row1 .col-2-3{
+	padding-left: 1%;
+	width: 65.6666666667%;
+}
+.er{
+	color: #35C0CD; 
+}
+.toper {
+	width: 30px;
+	height: 30px;
+	bottom: 50px;
+	right: 50px;
+	position: fixed;

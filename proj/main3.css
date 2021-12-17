@@ -1,0 +1,42 @@
+body{
+ background:#FFD073; 
+ color: rgb(0, 0, 0);
+ font-family: arial black;
+}
+header{
+	margin: auto;
+	line-height: 3;
+	width: 100%;
+	background: #F1FD72	;
+
+}
+.conteiner{
+	width: 100%;
+	max-width: 1024px;
+	padding: 10px 15px;
+	margin: 10px auto;
+	background: red;
+	
+}
+.conteiner:after, .row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.row{
+	margin-bottom: 15px;
+}
+.row1{
+min-height: 100px;
+}
+
+.col1 {
+	width: 33%;
+	min-height: 200px;
+	float: left;
+}
+.col2 {
+	width: 50%;
+	min-height: 200px;
+	float: left;
+}
