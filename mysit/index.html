@@ -1,311 +1,306 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Пример моего сайта</title>
-	<link rel="shortcut icon" href="ico.png" type="image/png">
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="main.css">
-	<link rel="stylesheet" type="text/css" href="st.css">
-	<script src="script.js"></script>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+	
 </head>
 <body>
 	<p>
-#include <stdio.h>
-#include <cs50.h>
-#include <malloc.h>
-#include <ctype.h>
-#include <stdlib.h>
-// #include <conio.h>
+#include stdio.h <br>
+#include cs50.h<br>
+#include malloc.h<br>
+#include ctype.h<br>
+#include stdlib.h<br>
+// #include conio.h<br>
+<br>
+<br>typedef struct Node {
+    <br>int value;
+    struct Node *next;<br>
+} Node;<br>
+<br>
+Node *head = NULL;<br>
+<br>
+void push(Node **head, int data) {//добавляет элемент списка в начала(стек)<br>
+    Node *tmp = (Node*) malloc(sizeof(Node));<br>
+    tmp->value = data;<br>
+    tmp->next = (*head);<br>
+    (*head) = tmp;<br>
+}<br>
+<br>
+<br>
+int pop(Node **head) {//удаляем первый элемент в списке<br>
+    Node* prev = NULL;<br>
+    int val;<br>
+    if (head == NULL) {<br>
+        exit(-1);//аварийное завершение работы проги<br>
+    }<br>
+    prev = (*head);<br>
+    val = prev->value;<br>
+    (*head) = (*head)->next;<br>
+    free(prev);<br>
+    return val;<br>
+}<br>
+<br>
+<br>
+Node* getNth(Node* head, int n) { //возвращает указатель на конкретный элемент списка<br>
+    int counter = 0;<br>
+    while (counter < n && head) {<br>
+        head = head->next;<br>
+        counter++;<br>
+    }<br>
+    return head;<br>
+}<br>
+<br>
+<br>
+Node* getLast(Node *head) {//возвращает указатель на последний элемент списка<br>
+    if (head == NULL) {<br>
+        return NULL;<br>
+    }<br>
+    while (head->next) {<br>
+        head = head->next;<br>
+    }<br>
+    return head;<br>
+}<br>
 
-typedef struct Node {
-    int value;
-    struct Node *next;
-} Node;
-
-Node *head = NULL;
-
-void push(Node **head, int data) {//добавляет элемент списка в начала(стек)
-    Node *tmp = (Node*) malloc(sizeof(Node));
-    tmp->value = data;
-    tmp->next = (*head);
-    (*head) = tmp;
-}
-
-
-int pop(Node **head) {//удаляем первый элемент в списке
-    Node* prev = NULL;
-    int val;
-    if (head == NULL) {
-        exit(-1);//аварийное завершение работы проги
-    }
-    prev = (*head);
-    val = prev->value;
-    (*head) = (*head)->next;
-    free(prev);
-    return val;
-}
-
-
-Node* getNth(Node* head, int n) { //возвращает указатель на конкретный элемент списка
-    int counter = 0;
-    while (counter < n && head) {
-        head = head->next;
-        counter++;
-    }
-    return head;
-}
-
-
-Node* getLast(Node *head) {//возвращает указатель на последний элемент списка
-    if (head == NULL) {
-        return NULL;
-    }
-    while (head->next) {
-        head = head->next;
-    }
-    return head;
-}
-
-void pushBack(Node *head, int value) { //вставляем элемент в конец списка
-    Node *last = getLast(head);
-    Node *tmp = (Node*) malloc(sizeof(Node));
-    tmp->value = value;
-    tmp->next = NULL;
-    last->next = tmp;
-}
-
-Node* getLastButOne(Node* head) { //возвращает указатель на последний элемент
-    if (head == NULL) {
-        exit(-2);
-    }
-    if (head->next == NULL) {
-        return NULL;
-    }
-    while (head->next->next) {
-        head = head->next;
-    }
-    return head;
-}
-
-
-
-
-
-// void popBack(Node **head) {//удаляет последний элемент списка
-//     Node *lastbn = NULL;
-//     //Получили NULL
-//     if (!head) {
-//         exit(-1);
-//     }
-//     //Список пуст
-//     if (!(*head)) {
-//         exit(-1);
-//     }
-//     lastbn = getLastButOne(*head);
-//     //Если в списке один элемент
-//     if (lastbn == NULL) {
-//         free(*head);
-//         *head = NULL;
-//     } else {
-//         free(lastbn->next);
-//         lastbn->next = NULL;
-//     }
-// }
-
-void insert(Node *head, unsigned n, int val) {//вставка элемента в список на указанное место
-    unsigned i = 0;
-    Node *tmp = NULL;
-    //Находим нужный элемент. Если вышли за пределы списка, то выходим из цикла,
-    //ошибка выбрасываться не будет, произойдёт вставка в конец
-    while (i < n && head->next) {
-        head = head->next;
-        i++;
-    }
-    tmp = (Node*) malloc(sizeof(Node));
-    tmp->value = val;
-    //Если это не последний элемент, то next перекидываем на следующий узел
-    if (head->next) {
-        tmp->next = head->next;
-    //иначе на NULL
-    } else {
-        tmp->next = NULL;
-    }
-    head->next = tmp;
-}
-
-
-int deleteNth(Node **head, int n) {//удаление элемента списка под номером n
-    if (n == 0) {
-        return pop(head);
-    } else {
-        Node *prev = getNth(*head, n-1);
-        Node *elm  = prev->next;
-        int val = elm->value;
-
-        prev->next = elm->next;
-        free(elm);
-        return val;
-    }
-}
-
-void deleteList(Node **head) {//удаление списка полностью
-    Node* prev = NULL;
-    while ((*head)->next) {
-        prev = (*head);
-        (*head) = (*head)->next;
-        free(prev);
-    }
-    free(*head);
-}
-
-
-void fromArray(Node **head, int *arr, size_t size) { //ввод в список элементов массива
-    size_t i = size - 1;
-    if (arr == NULL || size == 0) {
-        return;
-    }
-    do {
-        push(head, arr[i]);//добавление элемента в начало списка(стек)
-    } while(i--!=0);//ввод с конца т.к. добавляется элемент списка в начало
-}
-
-int* toArray(const Node *head) {
-    int leng = sizeof(head);
-    int *values = (int*) malloc(leng*sizeof(int));
-    while (head) {
-        values[--leng] = head->value;
-        head = head->next;
-    }
-    return values;
-}
-
-
-void printLinkedList(const Node *head) { //вывод функ
-    while (head) {
-        printf("%d ", head->value);//вывод значения
-        head = head->next;//переключение на следующий элемент списка
-    }
-    printf("\n");
-}
-
-int main() {
-    Node *head = NULL;
-    int arr[] = {1,2,3,4,5,6,7,8,9,10};
-    //Создаём список из массива
-    fromArray(&head, arr, 10);
-
-    printLinkedList(head);//вывод
-
-    //Вставляем узел со значением 333 после 4-го элемента (станет пятым)
-    insert(head, 4, 333);//
-    printLinkedList(head);//вывод
-
-    pushBack(head, 11);//добавляю
-    pushBack(head, 12);//добавляю
-    pushBack(head, 13);//добавляю
-    pushBack(head, 14);//добавляю
-    printLinkedList(head);//вывод
-
-    printf("%d\n", pop(&head));
-    // printf("%d\n", popBack(&head));
-
-    printLinkedList(head);//вывод
-    //Удаляем пятый элемент (индексация с нуля)
-    deleteNth(&head, 4);
-    printLinkedList(head);//вывод
-    deleteList(&head);
-
-    // getch();
-}
-
+void pushBack(Node *head, int value) { //вставляем элемент в конец списка<br>
+    Node *last = getLast(head);<br>
+    Node *tmp = (Node*) malloc(sizeof(Node));<br>
+    tmp->value = value;<br>
+    tmp->next = NULL;<br>
+    last->next = tmp;<br>
+}<br>
+<br>
+Node* getLastButOne(Node* head) { //возвращает указатель на последний элемент<br>
+    if (head == NULL) {<br>
+        exit(-2);<br>
+    }<br>
+    if (head->next == NULL) {<br>
+        return NULL;<br>
+    }<br>
+    while (head->next->next) {<br>
+        head = head->next;<br>
+    }<br>
+    return head;<br>
+}<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+// void popBack(Node **head) {//удаляет последний элемент списка<br>
+//     Node *lastbn = NULL;<br>
+//     //Получили NULL<br>
+//     if (!head) {<br>
+//         exit(-1);<br>
+//     }<br>
+//     //Список пуст<br>
+//     if (!(*head)) {<br>
+//         exit(-1);<br>
+//     }<br>
+//     lastbn = getLastButOne(*head);<br>
+//     //Если в списке один элемент<br>
+//     if (lastbn == NULL) {<br>
+//         free(*head);<br>
+//         *head = NULL;<br>
+//     } else {<br>
+//         free(lastbn->next);<br>
+//         lastbn->next = NULL;<br>
+//     }<br>
+// }<br>
+<br>
+void insert(Node *head, unsigned n, int val) {//вставка элемента в список на указанное место<br>
+    unsigned i = 0;<br>
+    Node *tmp = NULL;<br>
+    //Находим нужный элемент. Если вышли за пределы списка, то выходим из цикла,<br>
+    //ошибка выбрасываться не будет, произойдёт вставка в конец<br>
+    while (i < n && head->next) {<br>
+        head = head->next;<br>
+        i++;<br>
+    }<br>
+    tmp = (Node*) malloc(sizeof(Node));<br>
+    tmp->value = val;<br>
+    //Если это не последний элемент, то next перекидываем на следующий узел<br>
+    if (head->next) {<br>
+        tmp->next = head->next;<br>
+    //иначе на NULL<br>
+    } else {<br>
+        tmp->next = NULL;<br>
+    }<br>
+    head->next = tmp;<br>
+}<br>
+<br>
+<br>
+int deleteNth(Node **head, int n) {//удаление элемента списка под номером n<br>
+    if (n == 0) {<br>
+        return pop(head);<br>
+    } else {<br>
+        Node *prev = getNth(*head, n-1);<br>
+        Node *elm  = prev->next;<br>
+        int val = elm->value;<br>
+<br>
+        prev->next = elm->next;<br>
+        free(elm);<br>
+        return val;<br>
+    }<br>
+}<br>
+<br>
+void deleteList(Node **head) {//удаление списка полностью<br>
+    Node* prev = NULL;<br>
+    while ((*head)->next) {<br>
+        prev = (*head);<br>
+        (*head) = (*head)->next;<br>
+        free(prev);<br>
+    }<br>
+    free(*head);<br>
+}<br>
+<br>
+<br>
+void fromArray(Node **head, int *arr, size_t size) { //ввод в список элементов массива<br>
+    size_t i = size - 1;<br>
+    if (arr == NULL || size == 0) {<br>
+        return;<br>
+    }<br>
+    do {<br>
+        push(head, arr[i]);//добавление элемента в начало списка(стек)<br>
+    } while(i--!=0);//ввод с конца т.к. добавляется элемент списка в начало<br>
+}<br>
+<br>
+int* toArray(const Node *head) {<br>
+    int leng = sizeof(head);<br>
+    int *values = (int*) malloc(leng*sizeof(int));<br>
+    while (head) {<br>
+        values[--leng] = head->value;<br>
+        head = head->next;<br>
+    }<br>
+    return values;<br>
+}<br>
+<br>
+<br>
+void printLinkedList(const Node *head) { //вывод функ<br>
+    while (head) {<br>
+        printf("%d ", head->value);//вывод значения<br>
+        head = head->next;//переключение на следующий элемент списка<br>
+    }<br>
+    printf("\n");<br>
+}<br>
+<br>
+int main() {<br>
+    Node *head = NULL;<br>
+    int arr[] = {1,2,3,4,5,6,7,8,9,10};<br>
+    //Создаём список из массива<br>
+    fromArray(&head, arr, 10);<br>
+<br>
+    printLinkedList(head);//вывод<br>
+<br>
+    //Вставляем узел со значением 333 после 4-го элемента (станет пятым)<br>
+    insert(head, 4, 333);//<br>
+    printLinkedList(head);//вывод<br>
+<br>
+    pushBack(head, 11);//добавляю<br>
+    pushBack(head, 12);//добавляю<br>
+    pushBack(head, 13);//добавляю<br>
+    pushBack(head, 14);//добавляю<br>
+    printLinkedList(head);//вывод<br>
+<br>
+    printf("%d\n", pop(&head));<br>
+    // printf("%d\n", popBack(&head));<br>
+<br>
+    printLinkedList(head);//вывод<br>
+    //Удаляем пятый элемент (индексация с нуля)<br>
+    deleteNth(&head, 4);<br><br>
+    printLinkedList(head);//вывод<br>
+    deleteList(&head);<br>
+<br>
+    // getch();<br>
+}<br>
+<br>
 </p>
-		
-		тута закончился первый пример
+		<br>
+		тута закончился первый пример<br>
 
-		
-		
-		<p>
-			#include <stdio.h>
-#include <cs50.h>
-#include <malloc.h>
-struct list
-{
-  int field; // поле данных
-  struct list *ptr; // указатель на следующий элемент
-};
-
-// инициализация узла
-struct list * init(int a) // а- значение первого узла
-{
-  struct list *lst;
-  // выделение памяти под корень списка
-  lst = (struct list*)malloc(sizeof(struct list));
-  lst->field = a;
-  lst->ptr = NULL; // это последний узел списка
-  return(lst);
-}
-
-// добавление узла
-struct list * addelem(struct list *lst, int number)
-{
-  struct list *temp, *p;
-  temp = (struct list*)malloc(sizeof(struct list));
-  p = lst->ptr; // сохранение указателя на следующий узел
-  lst->ptr = temp; // предыдущий узел указывает на создаваемый
-  temp->field = number; // сохранение поля данных добавляемого узла
-  temp->ptr = p; // созданный узел указывает на следующий элемент
-  return(temp);
-}
-
-//удаление узла
-struct list * deletelem(struct list *lst,struct list *root)
-{
-  struct list *temp;
-  temp = root;
-  while (temp->ptr != lst) // просматриваем список начиная с корня
-  { // пока не найдем узел, предшествующий lst
-    temp = temp->ptr;
-  }
-  temp->ptr = lst->ptr; // переставляем указатель
-  free(lst); // освобождаем память удаляемого узла
-  return(temp);
-}
-
-// удаление корня
-struct list * deletehead(struct list *root)
-{
-  struct list *temp;
-  temp = root->ptr;
-  free(root); // освобождение памяти текущего корня
-  return(temp); // новый корень списка
-}
-
-//вывод элементов
-void listprint(struct list *lst)
-{
-  struct list *p;
-  p = lst;
-  do {
-    printf("%d ", p->field); // вывод значения элемента p
-    p = p->ptr; // переход к следующему узлу
-  } while (p != NULL);
-}
-
-int main() {
-  struct list s;
-  printf("1\n");
-  // init(0);
-  addelem(&s,1);
-  addelem(&s,2);
-  addelem(&s,3);
-  addelem(&s,4);
-  // deletehead(&s);
-  listprint(&s);
-
-}
-		</p>
+		<br>
+		<br>
+		<p><br>
+			#include <stdio.h><br>
+#include <cs50.h><br>
+#include <malloc.h><br>
+struct list<br>
+{<br>
+  int field; // поле данных<br>
+  struct list *ptr; // указатель на следующий элемент<br>
+};<br>
+<br>
+// инициализация узла<br>
+struct list * init(int a) // а- значение первого узла<br>
+{<br>
+  struct list *lst;<br>
+  // выделение памяти под корень списка<br>
+  lst = (struct list*)malloc(sizeof(struct list));<br>
+  lst->field = a;<br>
+  lst->ptr = NULL; // это последний узел списка<br>
+  return(lst);<br>
+}<br>
+<br>
+// добавление узла<br>
+struct list * addelem(struct list *lst, int number)<br>
+{<br>
+  struct list *temp, *p;<br>
+  temp = (struct list*)malloc(sizeof(struct list));<br>
+  p = lst->ptr; // сохранение указателя на следующий узел<br>
+  lst->ptr = temp; // предыдущий узел указывает на создаваемый<br>
+  temp->field = number; // сохранение поля данных добавляемого узла<br>
+  temp->ptr = p; // созданный узел указывает на следующий элемент<br>
+  return(temp);<br>
+}<br>
+<br>
+//удаление узла<br>
+struct list * deletelem(struct list *lst,struct list *root)<br>
+{<br>
+  struct list *temp;<br>
+  temp = root;<br>
+  while (temp->ptr != lst) // просматриваем список начиная с корня<br>
+  { // пока не найдем узел, предшествующий lst<br>
+    temp = temp->ptr;<br>
+  }<br>
+  temp->ptr = lst->ptr; // переставляем указатель<br>
+  free(lst); // освобождаем память удаляемого узла<br>
+  return(temp);<br>
+}<br>
+<br>
+// удаление корня<br>
+struct list * deletehead(struct list *root)<br>
+{<br>
+  struct list *temp;<br>
+  temp = root->ptr;<br>
+  free(root); // освобождение памяти текущего корня<br>
+  return(temp); // новый корень списка<br>
+}<br>
+<br>
+//вывод элементов<br>
+void listprint(struct list *lst)<br>
+{<br>
+  struct list *p;<br>
+  p = lst;<br>
+  do {<br>
+    printf("%d ", p->field); // вывод значения элемента p<br>
+    p = p->ptr; // переход к следующему узлу<br>
+  } while (p != NULL);<br>
+}<br>
+<br>
+int main() {<br>
+  struct list s;<br>
+  printf("1\n");<br>
+  // init(0);<br>
+  addelem(&s,1);<br>
+  addelem(&s,2);<br>
+  addelem(&s,3);<br>
+  addelem(&s,4);<br>
+  // deletehead(&s);<br>
+  listprint(&s);<br>
+<br>
+}<br>
+		</p><br>
+			
+			https://learnc.info/adt/linked_list.html<br>
+			https://prog-cpp.ru/data-ols/
 </body>
 </html>
