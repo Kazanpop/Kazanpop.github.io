@@ -12,148 +12,300 @@
 <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
 </head>
 <body>
- 	<header id="top">
- 		<a href="#top">
- 		<div class="topper"></div>
- 		</a>
+	<p>
+#include <stdio.h>
+#include <cs50.h>
+#include <malloc.h>
+#include <ctype.h>
+#include <stdlib.h>
+// #include <conio.h>
 
- 		<div class="container">
- 			<a href="" class="logo"><img src="KINO.gif" width="75px" height="75px"></a>
-	 		<nav>
-		      	<ul>
-		        	<li><a href="">Главная</a></li>
-		        	<li><a href="">О нас</a></li>
-		        <li><a href="#contact">Контакты</a></li>
-		      	</ul>
-	    	</nav>
- 		</div>
- 	</header>
- 	<div class="main">
-	 	<div class="container">
-			<div class="element">
-			 	<div class="imag i1">
-			 		<div class="hide">
-			 			<h2>Острые козырьки</h2>
-			 		</div>
-			 	</div>
-			 	<div class="text">
-			 		
-			 		<p>
+typedef struct Node {
+    int value;
+    struct Node *next;
+} Node;
 
-						#include <cs50.h><br>
-#include <stdio.h><br>
-#include <ctype.h><br>
-#include <string.h><br>
-#include <math.h><br>
-<br>
-int main()<br>
-{<br>
-    string text = get_string("Text: ");<br>
-    int letterscount = 0;<br>
-    int wordcount = 1;<br>
-    int sentencecount = 0;<br>
-<br>
-//count words<br>
-    for (int i = 0; i < strlen(text); i++)<br>
-    {<br>
-       if ((text[i] >= 'a' && text[i] <= 'z') || (text[i] >= 'A' && text[i] <= 'Z'))<br>
-       {<br>
-           letterscount++;<br>
-       }<br>
-       else if (text[i] == ' ')<br>
-       {<br>
-           wordcount++;<br>
-       }<br>
-       else if (text[i] == '.' || text[i] == '!' || text[i] == '?')<br>
-       {<br>
-           sentencecount++;<br>
-       }<br>
-    }<br>
-//    printf("letters: %i; words: %i; sentences: %i\n", letterscount, wordcount, sentencecount);<br>
-<br>
-    float grade = 0.0588 * (100 * (float) letterscount / (float) wordcount) - 0.296 *(100 * (float) sentencecount / (float) wordcount) - 15.8;<br>
-    if (grade < 16 && grade >= 0)<br>
-    {<br>
-        printf("Grade %i\n", (int) round(grade));<br>
-    }<br>
-    else if (grade >= 16)<br>
-    {<br>
-        printf("Grade 16+\n");<br>
-    }<br>
-    else<br>
-    {<br>
-        printf("Before Grade 1\n");<br>
-    }<br>
-<br>
-}<br>
-					</p>
-					<p>
-					Да, пусть их преступная деятельность и приносила немало проблем, но технический прогресс и ведение бизнеса зависели именно от представителей этого семейства. Главные действующие лица продолжали трудиться во благо себя и местных жителей, но чаще всего приходилось сводить счёты с представителями других банд. Многочисленные столкновения интересов, криминальные стычки и многое-многое другое - вот, чем жили криминальные группировки того времени.
-					</p>
-			 	
-			 	</div>
-			 	<div class="img-box">
-					
-					<img src="images/12.jpg" class="image">
-					<img src="images/13.jpg" class="image">
-					<img src="images/14.jpg" class="image">
-					<img src="images/15.jpg" class="image">
-					<img src="images/16.jpg" class="image">  
-					<img src="images/17.jpg" class="image">   
-					<img src="images/18.jpg" class="image"> 
-				</div>
-			 	
-			</div>
-			
-			<div class="element">
-			 	<div class="imag i2">
-			 		<div class="hide">
-			 			<h2>Рик и морти</h2>
-			 		</div>
-			 	</div>
-			 	 <div class="text">
-			 	 	Сериал посвящён злоключениям циничного безумного учёного Рика Санчеса и его наивного, капризного и неуверенного в себе внука Морти; создатель сериала Ройланд озвучивает обоих персонажей. Сериал, выросший из хулиганской анимационной пародии на франшизу «Назад в будущее», получил чрезвычайно высокие отзывы критики, особо отмечавшей его оригинальность, креативность и чувство юмора.
-			 	 </div>
-			 	<div class="img-box">
-					<img src="images/21.jpg" class="image">
-					<img src="images/22.jpg" class="image">
-					<img src="images/23.jpg" class="image">
-					<img src="images/24.jpg" class="image">
-					<img src="images/25.jpg" class="image">
-					<img src="images/26.jpg" class="image">  
-					<img src="images/27.jpg" class="image">   
-					<img src="images/28.jpg" class="image"> 
-				</div>
-			 	
-			</div>
-			<div class="element">
-			 	<div class="imag i3">
-			 		<div class="hide">
-			 			<h2>Мандалорец</h2>
-			 		</div>
-			 	</div>
-			 	 <div class="text">
-			 	 	Действие «Мандалорца» разворачивается пять лет спустя после событий фильма «Возвращение джедая». Педро Паскаль исполняет заглавную роль одинокого охотника за головами Дина Джарина, который вынужден податься в бега после того, как берёт под свою защиту «Малыша».
-			 	 </div>
-			 	<div class="img-box">
-					<img src="images/31.jpg" class="image">
-					<img src="images/32.jpg" class="image">
-					<img src="images/33.jpeg" class="image">
-					<img src="images/34.jpg" class="image">
-					<img src="images/35.jpg" class="image">
-					<img src="images/36.jpg" class="image">  
-					<img src="images/37.jpg" class="image">   
-					<img src="images/38.jpg" class="image"> 
-				</div>
-			 	
-			</div>
-	 	</div>
-	</div>
+Node *head = NULL;
 
- 	<footer id="contact">
- 		<div class="container">
-	 		
- 		</div>
- 	</footer>
+void push(Node **head, int data) {//добавляет элемент списка в начала(стек)
+    Node *tmp = (Node*) malloc(sizeof(Node));
+    tmp->value = data;
+    tmp->next = (*head);
+    (*head) = tmp;
+}
+
+
+int pop(Node **head) {//удаляем первый элемент в списке
+    Node* prev = NULL;
+    int val;
+    if (head == NULL) {
+        exit(-1);//аварийное завершение работы проги
+    }
+    prev = (*head);
+    val = prev->value;
+    (*head) = (*head)->next;
+    free(prev);
+    return val;
+}
+
+
+Node* getNth(Node* head, int n) { //возвращает указатель на конкретный элемент списка
+    int counter = 0;
+    while (counter < n && head) {
+        head = head->next;
+        counter++;
+    }
+    return head;
+}
+
+
+Node* getLast(Node *head) {//возвращает указатель на последний элемент списка
+    if (head == NULL) {
+        return NULL;
+    }
+    while (head->next) {
+        head = head->next;
+    }
+    return head;
+}
+
+void pushBack(Node *head, int value) { //вставляем элемент в конец списка
+    Node *last = getLast(head);
+    Node *tmp = (Node*) malloc(sizeof(Node));
+    tmp->value = value;
+    tmp->next = NULL;
+    last->next = tmp;
+}
+
+Node* getLastButOne(Node* head) { //возвращает указатель на последний элемент
+    if (head == NULL) {
+        exit(-2);
+    }
+    if (head->next == NULL) {
+        return NULL;
+    }
+    while (head->next->next) {
+        head = head->next;
+    }
+    return head;
+}
+
+
+
+
+
+// void popBack(Node **head) {//удаляет последний элемент списка
+//     Node *lastbn = NULL;
+//     //Получили NULL
+//     if (!head) {
+//         exit(-1);
+//     }
+//     //Список пуст
+//     if (!(*head)) {
+//         exit(-1);
+//     }
+//     lastbn = getLastButOne(*head);
+//     //Если в списке один элемент
+//     if (lastbn == NULL) {
+//         free(*head);
+//         *head = NULL;
+//     } else {
+//         free(lastbn->next);
+//         lastbn->next = NULL;
+//     }
+// }
+
+void insert(Node *head, unsigned n, int val) {//вставка элемента в список на указанное место
+    unsigned i = 0;
+    Node *tmp = NULL;
+    //Находим нужный элемент. Если вышли за пределы списка, то выходим из цикла,
+    //ошибка выбрасываться не будет, произойдёт вставка в конец
+    while (i < n && head->next) {
+        head = head->next;
+        i++;
+    }
+    tmp = (Node*) malloc(sizeof(Node));
+    tmp->value = val;
+    //Если это не последний элемент, то next перекидываем на следующий узел
+    if (head->next) {
+        tmp->next = head->next;
+    //иначе на NULL
+    } else {
+        tmp->next = NULL;
+    }
+    head->next = tmp;
+}
+
+
+int deleteNth(Node **head, int n) {//удаление элемента списка под номером n
+    if (n == 0) {
+        return pop(head);
+    } else {
+        Node *prev = getNth(*head, n-1);
+        Node *elm  = prev->next;
+        int val = elm->value;
+
+        prev->next = elm->next;
+        free(elm);
+        return val;
+    }
+}
+
+void deleteList(Node **head) {//удаление списка полностью
+    Node* prev = NULL;
+    while ((*head)->next) {
+        prev = (*head);
+        (*head) = (*head)->next;
+        free(prev);
+    }
+    free(*head);
+}
+
+
+void fromArray(Node **head, int *arr, size_t size) { //ввод в список элементов массива
+    size_t i = size - 1;
+    if (arr == NULL || size == 0) {
+        return;
+    }
+    do {
+        push(head, arr[i]);//добавление элемента в начало списка(стек)
+    } while(i--!=0);//ввод с конца т.к. добавляется элемент списка в начало
+}
+
+int* toArray(const Node *head) {
+    int leng = sizeof(head);
+    int *values = (int*) malloc(leng*sizeof(int));
+    while (head) {
+        values[--leng] = head->value;
+        head = head->next;
+    }
+    return values;
+}
+
+
+void printLinkedList(const Node *head) { //вывод функ
+    while (head) {
+        printf("%d ", head->value);//вывод значения
+        head = head->next;//переключение на следующий элемент списка
+    }
+    printf("\n");
+}
+
+int main() {
+    Node *head = NULL;
+    int arr[] = {1,2,3,4,5,6,7,8,9,10};
+    //Создаём список из массива
+    fromArray(&head, arr, 10);
+
+    printLinkedList(head);//вывод
+
+    //Вставляем узел со значением 333 после 4-го элемента (станет пятым)
+    insert(head, 4, 333);//
+    printLinkedList(head);//вывод
+
+    pushBack(head, 11);//добавляю
+    pushBack(head, 12);//добавляю
+    pushBack(head, 13);//добавляю
+    pushBack(head, 14);//добавляю
+    printLinkedList(head);//вывод
+
+    printf("%d\n", pop(&head));
+    // printf("%d\n", popBack(&head));
+
+    printLinkedList(head);//вывод
+    //Удаляем пятый элемент (индексация с нуля)
+    deleteNth(&head, 4);
+    printLinkedList(head);//вывод
+    deleteList(&head);
+
+    // getch();
+}
+
+</p>
+		
+		тута закончился первый пример
+
+		
+		
+		<p>
+			#include <stdio.h>
+#include <cs50.h>
+#include <malloc.h>
+struct list
+{
+  int field; // поле данных
+  struct list *ptr; // указатель на следующий элемент
+};
+
+// инициализация узла
+struct list * init(int a) // а- значение первого узла
+{
+  struct list *lst;
+  // выделение памяти под корень списка
+  lst = (struct list*)malloc(sizeof(struct list));
+  lst->field = a;
+  lst->ptr = NULL; // это последний узел списка
+  return(lst);
+}
+
+// добавление узла
+struct list * addelem(struct list *lst, int number)
+{
+  struct list *temp, *p;
+  temp = (struct list*)malloc(sizeof(struct list));
+  p = lst->ptr; // сохранение указателя на следующий узел
+  lst->ptr = temp; // предыдущий узел указывает на создаваемый
+  temp->field = number; // сохранение поля данных добавляемого узла
+  temp->ptr = p; // созданный узел указывает на следующий элемент
+  return(temp);
+}
+
+//удаление узла
+struct list * deletelem(struct list *lst,struct list *root)
+{
+  struct list *temp;
+  temp = root;
+  while (temp->ptr != lst) // просматриваем список начиная с корня
+  { // пока не найдем узел, предшествующий lst
+    temp = temp->ptr;
+  }
+  temp->ptr = lst->ptr; // переставляем указатель
+  free(lst); // освобождаем память удаляемого узла
+  return(temp);
+}
+
+// удаление корня
+struct list * deletehead(struct list *root)
+{
+  struct list *temp;
+  temp = root->ptr;
+  free(root); // освобождение памяти текущего корня
+  return(temp); // новый корень списка
+}
+
+//вывод элементов
+void listprint(struct list *lst)
+{
+  struct list *p;
+  p = lst;
+  do {
+    printf("%d ", p->field); // вывод значения элемента p
+    p = p->ptr; // переход к следующему узлу
+  } while (p != NULL);
+}
+
+int main() {
+  struct list s;
+  printf("1\n");
+  // init(0);
+  addelem(&s,1);
+  addelem(&s,2);
+  addelem(&s,3);
+  addelem(&s,4);
+  // deletehead(&s);
+  listprint(&s);
+
+}
+		</p>
 </body>
 </html>
