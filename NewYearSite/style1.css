@@ -1,0 +1,31 @@
+th {
+  font-size: 20px;
+  font-weight: center;
+  background: #b9c9fe;
+  border-top: 1px solid #aabcfe;
+  border-bottom: 1px solid black;
+  color: #039;
+  padding: 2px;
+}
+
+.a {
+	width: 500px;
+	height: 2000px;
+	background: red;
+}
+
+.fixed {
+	width: 300px;
+	background: blue;
+	transition: 2s ease-out 0s;
+}
+
+.b {
+	height: 300px;
+	opacity: 1;
+}
+
+.c {
+	height: 0;
+	opacity: 0;
+}

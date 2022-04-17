@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sfdgsd</title>
+	<link rel="stylesheet" type="text/css" href="style1.css">
+</head>
+<body>
+	<div class="a">
+		<div class="fixed b" id="fixedDiv"></div>
+	</div>
+
+	<script>
+		var oldScrollY = 250;
+		var div = document.getElementById("fixedDiv");
+
+		window.onscroll = function() {
+		  var scrolled = window.pageYOffset || document.documentElement.scrollTop();
+		  var dY = scrolled - oldScrollY;
+		  
+		  if ( dY > 0 ){
+		    div.className = "fixed c";
+		  } else {
+		    div.className = "fixed b";
+		  }
+		  
+		  oldScrollY = scrolled;
+		}
+	</script>
+</body>
+</html>
