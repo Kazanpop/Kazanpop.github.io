@@ -211,10 +211,11 @@ html {
 
 
 .second-item {
-	width: calc(100% / 3 - 20px);
+	width: calc(100% / 3 - 2%);
 	background: #fff;
-	margin: 10px;
-	padding: 60px;
+	margin: 1%;
+	padding: 6% 2%;
+	transition: 0.3s;
 }
 
 
@@ -228,6 +229,7 @@ html {
 
 .readmore {
 	background: black;
+	width: 100%;
 }
 
 
