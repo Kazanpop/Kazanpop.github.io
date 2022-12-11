@@ -1,0 +1,68 @@
+@media all and (min-width: 1150px){
+	.trsprnt:hover {
+		background: #00897b;
+		border-color: transparent;
+	}
+
+	.green:hover {
+		border: 2px solid;
+		background: transparent;
+	}
+
+	.nav-link:hover {
+		background: rgba(0,0,0,0.6);
+		border-radius: 5px;
+		color: gold;
+	}
+
+	.second-item:hover {
+		background: #00897b;
+		color: #fff;
+		transform: scale(1.05);
+		box-shadow: 0 0 40px 5px rgba(0,0,0,0.3);
+	}
+	.second-item:hover .readmore {
+		border-color: #fff;
+		color: #fff;
+	}
+}
+
+
+@media all (max-width: 768px) {
+	.naw-wrapper {
+		overflow: auto;
+		white-space: nowrap;
+	}
+	.logo, .search-wrapper, .topnav {
+		display: inline-block;
+	}
+
+	.h1 {
+		font-size: 8vw;
+	}
+/*  kazanpop.github.io/NewYearSite  */
+	.header-btn {
+		width: 90vw;
+		height: 60px;
+		margin-top: 15px;
+	}
+
+	.header-btn + .header-btn{
+		margin-left: 0;
+	}
+
+	.section-subtitle {
+		width: 85%;
+	}
+
+	.second-item, .first-item {
+		width: 90%;
+		margin: 20px auto;
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+
+	.first-box {
+		flex-wrap: wrap;
+	}
+}

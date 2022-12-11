@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<!-- <meta name="viewport" content="width=device-width, inital-scale=1"> -->
+	<title>Modes 3</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/media.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	
+
+</head>
+<body>
+		<div class="nav-wrapper">
+			<div class="logo">Happy</div>
+			<nav class="topnav">
+				<a href="#" class="nav-link">Home</a>
+				<a href="#elk" class="nav-link">ЁЛКА</a>
+				<a href="#" class="nav-link">Servicing</a>
+				<a href="#" class="nav-link">Portfolio</a>
+				<a href="#" class="nav-link">Blog</a>
+				<a href="#" class="nav-link">Contact us</a>
+				<div class="search-wrapper">
+					<input type="text" class="search">
+				</div>
+			</nav>
+			
+		</div>
+	<header class="header">
+		<div class="box">
+			<h1 class="h1">Happy New Year</h1>
+			<p class="subtitle"></p>
+			<button class="header-btn trsprnt">Prices</button>
+			<button class="header-btn green">WOW NOW</button>
+		</div>
+	</header>
+
+
+	<main class="main">
+		<div class="first">
+			<h2 class="h2" id="elk">Новогодняя ёлка</h2>
+			<p class="section-subtitle">
+				Самый важный элемент празника!
+				Чтобы праздничное настроение не покидало вас и только усиливалось, у вас обязательно длжа быть наряжена ёлка! Рецепт:
+			</p>
+			<div class="first-box">
+				<div class="first-item">
+					<img src="img/elka.png" alt="" class="icon">
+					<h3 class="h3"></h3>
+					<p class="section-subtitle">Взять ёлку</p>
+				</div>
+				<div class="first-item">
+					<img src="img/igrusha.png" alt="" class="icon">
+					<h3 class="h3"></h3>
+					<p class="section-subtitle">Нарядить в игрушки</p>
+				</div>
+				<div class="first-item">
+					<img src="img/girlnd.jpg" alt="" class="icon">
+					<h3 class="h3"></h3>
+					<p class="section-subtitle">Накинуть гирлянды</p>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="second first">
+			<h2 class="h2">Our services</h2>
+			<p class="section-subtitle">Lorem, ipsum dolor, sit amet consectetur adipisicing elit. Amet, rerum, dicta. Voluptatibus fuga atque dolore illum, aliquid, molestias a rerum.</p>
+			<div class="first-box second-box">
+				<div class="second-item" id="t1">
+					<img src="img/kolpak1.png" alt="" class="icon">
+					<h3 class="h3">Колпаки</h3>
+					<p class="section-subtitle">Каждый уважающий себя новогодник должен носить колпак!</p>
+					<input onclick="hide_brend('1', 't', 'r', '5')" type="button" id="t1b" class="readmore" name="" value="Узреть колпаки">
+					
+				</div>
+				<div class="second-item" id="t2">
+					<img src="img/global.png" alt="" class="icon">
+					<h3 class="h3">Ёлки</h3>
+					<p class="section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo inventore, quasi reiciendis deserunt quos sunt. Rem, facilis, aut. Perspiciatis, quibusdam.</p>
+					<input onclick="hide_brend('2', 't', 'y', '1')" type="button" id="t2b"class="readmore"name="" value="Узреть ёлки">
+				</div>
+				<div class="second-item" id="t3">
+					<img src="img/global.png" alt="" class="icon">
+					<h3 class="h3">Игрушки</h3>
+					<p class="section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo inventore, quasi reiciendis deserunt quos sunt. Rem, facilis, aut. Perspiciatis, quibusdam.</p>
+					<input onclick="hide_brend('3', 't', 'u', '1')" type="button" id="t3b"class="readmore"name="" value="Узреть ёлки">
+				</div>
+				<div class="second-item" id="t4">
+					<img src="img/global.png" alt="" class="icon">
+					<h3 class="h3">Гирлянды</h3>
+					<p class="section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quod fugit soluta dolorem saepe ab minima excepturi id incidunt temporibus?</p>
+					<input onclick="hide_brend('4', 't', 'i', '1')" type="button" id="t4b"class="readmore"name="" value="Узреть ёлки">
+				</div>
+				<div class="second-item" id="t5">
+					<img src="img/global.png" alt="" class="icon">
+					<h3 class="h3">Подарки</h3>
+					<p class="section-subtitle">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam maiores modi consectetur doloribus illo. Iusto, facere maiores quod esse illum!</p>
+					<input onclick="hide_brend('5', 't', 'o', '1')" type="button" id="t5b"class="readmore"name="" value="Узреть ёлки">
+				</div>
+				<div class="second-item" id="t6">
+					<img src="img/.png" alt="" class="icon">
+					<h3 class="h3">Костюмы</h3>
+					<p class="section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo inventore, quasi reiciendis deserunt quos sunt. Rem, facilis, aut. Perspiciatis, quibusdam.</p>
+					<input onclick="hide_brend('6', 't', 'p', '1')" type="button" id="t6b"class="readmore"name="" value="Узреть ёлки">
+				</div>
+				<div class="second-item r" id="r1">
+					<img src="img/kol1.png" alt="" class="icon">
+					<h3 class="h3">появление</h3>
+					<p class="section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo inventore, quasi reiciendis deserunt quos sunt. Rem, facilis, aut. Perspiciatis, quibusdam.</p>
+					<a href="https://kazanpop.github.io/module3/"><button class="readmore"> Read more</button></a>
+				</div>
+				<div class="second-item r" id="r2">
+					<img src="img/kol3.png" alt="" class="icon">
+					<h3 class="h3">появление</h3>
+					<p class="section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo inventore, quasi reiciendis deserunt quos sunt. Rem, facilis, aut. Perspiciatis, quibusdam.</p>
+					<a href="https://kazanpop.github.io/module3/"><button class="readmore"> Read more</button></a>
+				</div>
+				<div class="second-item r" id="r3">
+					<img src="img/kol4.png" alt="" class="icon">
+					<h3 class="h3">появление</h3>
+					<p class="section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo inventore, quasi reiciendis deserunt quos sunt. Rem, facilis, aut. Perspiciatis, quibusdam.</p>
+					<a href="https://kazanpop.github.io/module3/"><button class="readmore"> Read more</button></a>
+				</div>
+				<div class="second-item r" id="r4">
+					<img src="img/kol5.png" alt="" class="icon">
+					<h3 class="h3">появление</h3>
+					<p class="section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo inventore, quasi reiciendis deserunt quos sunt. Rem, facilis, aut. Perspiciatis, quibusdam.</p>
+					<a href="https://kazanpop.github.io/module3/"><button class="readmore"> Read more</button></a>
+				</div>
+				<div class="second-item r" id="r5">
+					<img src="img/kol6.png" alt="" class="icon">
+					<h3 class="h3">появление</h3>
+					<p class="section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo inventore, quasi reiciendis deserunt quos sunt. Rem, facilis, aut. Perspiciatis, quibusdam.</p>
+					<a href="https://kazanpop.github.io/module3/"><button class="readmore"> Read more</button></a>
+				</div>
+				<div class="second-item r" id="y1">
+					<img src="img/kol6.png" alt="" class="icon">
+					<h3 class="h3">Ёлка</h3>
+					<p class="section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo inventore, quasi reiciendis deserunt quos sunt. Rem, facilis, aut. Perspiciatis, quibusdam.</p>
+					<a href="https://kazanpop.github.io/module3/"><button class="readmore"> Read more</button></a>
+				</div>
+				<div class="second-item r" id="u1">
+					<img src="img/kol6.png" alt="" class="icon">
+					<h3 class="h3">Игрушки</h3>
+					<p class="section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo inventore, quasi reiciendis deserunt quos sunt. Rem, facilis, aut. Perspiciatis, quibusdam.</p>
+					<a href="https://kazanpop.github.io/module3/"><button class="readmore"> Read more</button></a>
+				</div>
+				<div class="second-item r" id="i1">
+					<img src="img/kol6.png" alt="" class="icon">
+					<h3 class="h3">Гирлянды</h3>
+					<p class="section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo inventore, quasi reiciendis deserunt quos sunt. Rem, facilis, aut. Perspiciatis, quibusdam.</p>
+					<a href="https://kazanpop.github.io/module3/"><button class="readmore"> Read more</button></a>
+				</div>
+				<div class="second-item r" id="o1">
+					<img src="img/kol6.png" alt="" class="icon">
+					<h3 class="h3">Подарки</h3>
+					<p class="section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo inventore, quasi reiciendis deserunt quos sunt. Rem, facilis, aut. Perspiciatis, quibusdam.</p>
+					<a href="https://kazanpop.github.io/module3/"><button class="readmore"> Read more</button></a>
+				</div>
+				<div class="second-item r" id="p1">
+					<img src="img/kol6.png" alt="" class="icon">
+					<h3 class="h3">Костюмы</h3>
+					<p class="section-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo inventore, quasi reiciendis deserunt quos sunt. Rem, facilis, aut. Perspiciatis, quibusdam.</p>
+					<a href="https://kazanpop.github.io/module3/"><button class="readmore"> Read more</button></a>
+				</div>
+			</div>
+		</div>
+
+
+	</main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js">
+	
+</script>
+
+
+
+</body>
+</html>
+
+<!-- open-sans 400 600 -->
+<!-- a.nav-link[href='#']*6 -->
+<!-- div.nav-wrapper>nav.topnav -->
+<!-- div.logo{Your logo} -->
+<!-- div.search-wrapper>input.search -->
+
+
+
+
+<!-- div.first-item*3>img.icon[src="img/icon.png"]+h3.h3+p.section-subtitle{lorem20} -->
+
+<!-- div.second-box>div.second-item*6>img.icon[src="img/global.png"]+h3.h3+p.section-subtitle{lorem20}+button.readmore{Read more} -->

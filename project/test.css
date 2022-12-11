@@ -1,0 +1,137 @@
+
+
+.first1 {
+	width: 400px;
+	height: 100px;
+	background: yellow;
+	text-align: center;
+	opacity: 0;
+  	animation: ania 2.5s forwards;
+}
+
+@keyframes ania {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+
+.first2 {
+	width: 400px;
+	height: 100px;
+	background: green;
+	text-align: center;
+	transform: translateX(-150%);
+  	animation: anii 1s forwards;
+}
+
+@keyframes anii {
+  0% {transform: translateX(-150%);}
+  100% {transform: translateY(0);}
+}
+
+.first3 {
+	width: 400px;
+	height: 100px;
+	background: red;
+	text-align: center;
+	transform: translateY(-150%);
+  	animation: anio 1s forwards;
+}
+
+@keyframes anio {
+  0% {transform: translateY(-150%);}
+  100% {transform: translateY(0);}
+}
+
+
+.first4 {
+	width: 400px;
+	height: 100px;
+	background: blue;
+	text-align: center;
+	font-size: 0;
+  	animation: anie 2s forwards;
+	
+}
+@keyframes anie {
+  0% {font-size: 0;}
+  100% {font-size: 16px;}
+}
+
+.first5 {
+	width: 100px;
+	height: 200px;
+	background: orange;
+	text-align: center;
+	position: absolute;
+	overflow: hidden; 
+	top: 100px; 
+	left: 0; 
+
+  	text-align: right; white-space: nowrap;
+  	animation: aniw 1s linear forwards;
+}
+
+@keyframes aniw {
+  0% {left: 0; width: 0;}
+  100% {left: 500px; width: 150px;}
+}
+
+
+.first6{
+	width: 400px;
+	height: 200px;
+	background: pink;
+}
+
+.first6>p {transform: translateX(-150%);}
+.first6>p:nth-child(1) {animation: ani 0.5s ease-in-out forwards;}
+.first6>p:nth-child(2) {animation: ani 0.5s forwards 0.5s;}
+.first6>p:nth-child(3) {animation: ani 0.5s forwards 1s;}
+.first6>p:nth-child(4) {animation: ani 0.5s forwards 1.5s;}
+.first6>p:nth-child(5) {animation: ani 0.5s forwards 2s;}
+
+@keyframes ani {
+  0% {transform: translateX(-150%);}
+  15% {transform: translateX(5%);}
+  30% {transform: translateX(-5%);}
+  45% {transform: translateX(3%);}
+  60% {transform: translateX(-3%);}
+  75% {transform: translateX(1%);}
+  85% {transform: translateX(-1%);}
+  100% {transform: translateX(0);}
+}
+
+
+
+
+
+
+
+.test {
+	width: 200px;
+	height: 40px;
+	background: green;
+	border-color: transparent;
+	color: blue;
+	font-size: 16px;
+}
+
+.on {
+	width: 400px;
+	height: 100px;
+	background: black;
+	/*display: none;*/
+	transition: all 3s ease;
+}
+.hidden {
+  opacity: 0;
+
+}
+
+
+.off {
+	width: 600px;
+	height: 100px;
+	background: blue;
+}
