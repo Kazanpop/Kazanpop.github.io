@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+html {
+    background-image: url(../img/fon.jpg);
+    background-size: contain;
+}
+
+.container {
+    margin: auto;
+    width: 75%;
+    min-height: 40px;
+}
+
+.flex-sp-b {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.logo {
+    width: 240px;
+    height: 60px;
+    background-image: url(https://i.pinimg.com/originals/21/f4/5c/21f45c431e3a6a7d49e24b6502b98550.jpg);
+/*    border: 1px solid black;*/
+    background-size: contain;
+}
+
+.menu-item {
+    display: inline-block;
+    font-size: 25px;
+    margin-left: 50px;
+    background: lightgray;
+    padding: 7px 23px;
+    border-radius: 10px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.menu-item:hover {
+    background: darkgray;
+}
+
+.menu-a {
+    text-decoration: none;
+    color: darkred;
+    
+}
+
+body {
+    font-family: arial;
+}
+
+header {
+    background-color: darkred;
+}
+
+.rgba {
+    margin-top: 60px;
+    background: rgba(100,100,100,0.65);
+    padding: 40px;
+}
+
+.main-h {
+    text-align: center;
+    font-size: 50px;
+    padding: 40px;
+    
+}
+
+.nav-block {
+    margin-left: 90px;
+    border: 2px dashed black;
+    padding: 30px;
+    width: 500px;
+    
+}
+
+.nav-ul {
+    
+}
+
+.nav-item {
+    padding: 10px;
+    font-size: 14px;
+}
+
+.nav-a {
+    text-decoration: none;
+    color: beige;
+}
+
+.screen {
+    border: 1px dotted black;
+    max-width: 50%;
+}
+
+h2,h3{
+    text-align: center;
+    padding: 15px;
+}
+
+.post-screen {
+    width: 100%;
+}
+
+.text-screen {
+    width: 50%;
+    height: inherit;
+    padding: 20px;
+}
+
+.text {
+    width: 90%;
+    margin: auto;
+    padding: 30px;
+}
+
+.post {
+    color: white;
+    
+}
+
+.back {
+    background-color: rgba(50,50,50,0.9);
+}
