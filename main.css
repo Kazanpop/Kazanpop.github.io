@@ -160,11 +160,16 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: url(https://sun9-69.userapi.com/impf/c836630/v836630021/5a728/ceiXWzfFgtc.jpg?size=2048x1152&quality=96&sign=5ead1d8b61a4488f29fa809743c29d92&type=album);
+    background-size: cover;
+    background-position: center;
 }
 
 .logo {
     display: flex;
     justify-content: center;
+    
+    margin-bottom: 38px;
 }
 
 .logo-line {
@@ -192,4 +197,133 @@ html {
 .logo-lites-right .logo-line:nth-child(2){
     margin-left: 20px;
     width: 55px;
+}
+.about {
+    text-align: center;
+    border-bottom: 1px solid rgba(168,168,168,0.44);
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+}
+
+.name {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 11px;
+}
+
+.position {
+    font-size: 9px;
+    text-transform: uppercase;
+    color: #808000;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.about-adres {
+    font-size: 13px;
+    margin-bottom: 15px;
+    font-family: roboto;
+}
+
+.about-contacts {
+    font-size: 10px;
+}
+
+.about-link {
+    text-decoration: none;
+    color: #777777;
+}
+
+.heading-white {
+    font-size: 16px;
+    border-bottom: 1px solid rgba(168,168,168,0.44);
+    margin-bottom: 37px;
+}
+
+.list {
+    list-style: none;
+    padding-left: 0;
+}
+
+
+
+.list-item:before {
+    content: '';
+    background: black;
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    left: 0;
+    top: 3;
+}
+
+.list-item {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 30px;
+    border-bottom: 2px dashed #ececec;
+}
+
+.list-item-4 {
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.list-item-date {
+    font-size: 11px;
+    text-transform: uppercase;
+    
+    
+}
+
+.item-info {
+    font-size: 10px;
+    color: #777;
+}
+
+.list-item2 {
+    border: none;
+}
+
+.white_lvlup {
+    margin-bottom: 48px;
+}
+
+.lvlup-list-item1 {
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-size: 11px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.level {
+    width: 70%;
+    height: 8px;
+    border: 1px solid black;
+    position: relative;
+}
+
+.level:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: grey;
+}
+
+.lvl1:before {
+    width: 85%;
+}
+
+.lvl2:before {
+    width: 75%;
+}
+
+.lvl3:before {
+    width: 40%;
 }
