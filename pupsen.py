@@ -26,10 +26,10 @@ def craft():
         TableValues = TableValues + cell + tdef[cellvar]
         if i < n-1:
             TableValues = TableValues + "NOT NULL , "
-    rrr = "test CHAR(200)"
     # !!!!!!!!!!!!!!!!!!!1
-    bd.execute("CREATE TABLE ? (?,?) ",TableName,TableValues,rrr)
-    bd.execute("INSERT INTO tabletos VALUES (?,?) ",TableName,n+1)
+    s = "CREATE TABLE " + TableName + " ( " + TableValues + ") "
+    bd.execute(s)
+    bd.execute("INSERT INTO tabletos VALUES (?,?) ",TableName,n)
 
 
 def Drop():
@@ -44,17 +44,39 @@ def viewValues():
 
 def insert():
     a = input("Название таблицы - ")
-    print(bd.execute("SELECT * FROM ?",a))
-    n = bd.execute("SELECT COL FROM tabletos WHERE NAME = ?",a)[0]['COL']
+    temp = bd.execute("SELECT * FROM ? ;",a)
+    for i in temp:
+        print(i)
+    n = bd.execute("SELECT COL FROM tabletos WHERE NAME = ? ;",a)[0]['COL']
     # print(n)
     InpVal = ''
     for i in range(n):
-        val = input("Введи данные: ")
+        val = input("Введи данные (если данные строковые - ставь ''): ")
         InpVal = InpVal + val
         if i < n-1:
             InpVal = InpVal + " , "
+    s = "INSERT INTO " + a + " VALUES( " + InpVal + " ) ;"
+    bd.execute(s)
 
-    bd.execute("INSERT INTO ? VALUES(?)",a,InpVal)
+
+
+def delete():
+    a = input("Название таблицы - ")
+    key = bd.execute("SELECT * FROM ? ;",a)
+    for i in key:
+        print(i)
+    colls = list(key[0].keys())
+    print(colls)
+    print('Выберите столбец с данными: ')
+    for i in range(len(colls)):
+        print(i,'-',colls[i])
+    Q = colls[int(input(" - "))]
+    V = input("Введите данные для удаления: ")
+    s = "DELETE FROM " + a + " WHERE " + Q +" == " + V
+    bd.execute(s)
+
+
+
 
 selector = -1
 
@@ -67,8 +89,8 @@ while selector != 0:
         viewValues()
     if selector == 3:
         insert()
-    # if selector == 4:
-        #
+    if selector == 4:
+        delete()
     if selector == 5:
         craft()
     if selector == 6:
