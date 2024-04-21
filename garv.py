@@ -1,58 +1,121 @@
 from cs50 import SQL
 
-b = SQL("sqlite:///viNEGRet.db")
+bd = SQL("sqlite:///vupsen.db")
+tdef = [" CHAR(250) "," INT "," FLOAT "]
+c = 'COL'
+# табличка хранящая все названия других таблиц
+# bd.execute("CREATE TABLE tabletos(NAME CHAR(50) NOT NULL)")
 
-TypeList = ["FLOAT", "INT", "CHAR(200)"]
+def viewTables():
+    tables = bd.execute("SELECT * FROM tabletos")
 
-# b.execute("CREATE TABLE SHNOPA (NAME CHAR(200) NOT NULL)")
+    colls = list(tables[0].keys())
+    s = ''
+    for j in range(len(colls)):
+        a = str(colls[j])
+        br = 15 - len(a)
+        s = s + a + ' '*br
+    print(s)
+    print()
+    for i in range(len(tables)):
+        s = ''
+        for j in range(len(colls)):
+            a = str(tables[i][colls[j]])
+            br = 15 - len(a)
+            s = s  + a + ' '*br
+        print(s)
 
-def conclusion():
-    a = b.execute("SELECT * FROM SHNOPA")
-    for i in a:
-        print(i)
 
-
-def drop():
-    tabName = input("Введите название таблицы: ")
-    b.execute("DROP TABLE ?",tabName)
-    b.execute("DELETE FROM SHNOPA WHERE NAME == ?",tabName)
-
-
-def creation():
-    value = ''
-    print("Режим создания таблицы")
-    tabName = input("Введите название таблицы: ")
-    n = int(input("Сколько столбцов в таблице: "))
+def craft():
+    print("Режим создания таблиц:")
+    TableName = input("Впишите название таблицы: ")
+    TableValues = ""
+    n = 0
+    while n < 1:
+        n = int(input("Сколько столбцов будет иметь ваша таблица? Значение: "))
     for i in range(n):
-        collName = input("Введите название столбца: ")
-        print("Выберите тип данных столбца: ")
-        for j in range(len(TypeList)):
-            print(" - ",j," - ",TypeList[j])
-        collType = int(input(" - "))
-        value = value + collName + " " + TypeList[collType] + " "
+        cell = input("Введите название столбца: ")
+        print("Выберите тип данных:")
+        for j in range(len(tdef)):
+            print(j,tdef[j])
+        cellvar = int(input("Выбор:"))
+        TableValues = TableValues + cell + tdef[cellvar]
         if i < n-1:
-            value = value + ", "
+            TableValues = TableValues + "NOT NULL , "
+    s = "CREATE TABLE " + TableName + " ( " + TableValues + ") "
+    bd.execute(s)
 
 
-    s = "CREATE TABLE " + tabName + " ( " + value + " ) "
-    b.execute(s)
-    b.execute("INSERT INTO SHNOPA VALUES(?)",tabName)
+def Drop():
+    viewTables()
+    a = input("- ")
+    bd.execute("DROP TABLE ?",a)
+    bd.execute("DELETE FROM tabletos where NAME = ?",a)
+
+def viewValues(name):
+    a = name
+    tables = bd.execute("SELECT * FROM ?",a)
+    colls = list(tables[0].keys())
+    s = ''
+    for j in range(len(colls)):
+        a = str(colls[j])
+        br = 15 - len(a)
+        s = s + a + ' '*br
+    print(s)
+    print()
+    for i in range(len(tables)):
+        s = ''
+        for j in range(len(colls)):
+            a = str(tables[i][colls[j]])
+            br = 15 - len(a)
+            s = s  + a + ' '*br
+        print(s)
+
+def insert():
+    a = input("Название таблицы - ")
+    viewValues(a)
+    n = bd.execute("SELECT COL FROM tabletos WHERE NAME = ? ;",a)[0]['COL']
+    InpVal = ''
+    for i in range(n):
+        val = input("Введи данные (если данные строковые - ставь ''): ")
+        InpVal = InpVal + val
+        if i < n-1:
+            InpVal = InpVal + " , "
+    s = "INSERT INTO " + a + " VALUES( " + InpVal + " ) ;"
+    bd.execute(s)
+
+
+
+def delete():
+    a = input("Название таблицы - ")
+    viewValues(a)
+    key = bd.execute("SELECT * FROM ? ;",a)
+    colls = list(key[0].keys())
+    print('Выберите столбец с данными: ')
+    for i in range(len(colls)):
+        print(i,'-',colls[i])
+    Q = colls[int(input(" - "))]
+    V = input("Введите данные для удаления: ")
+    s = "DELETE FROM " + a + " WHERE " + Q +" == " + V
+    bd.execute(s)
+
+
 
 
 selector = -1
+
 while selector != 0:
     print("Меню выбора:\n1 - Вывод названий таблиц\n2 - Вывод содержимого таблицы\n3 - Ввод данных в таблицу\n4 - удаление данных из таблицы\n5 - Создание таблицы\n6 - удаление таблицы\n0 - закончить работу")
     selector = int(input("Выбор: "))
     if selector == 1:
-        conclusion()
+        viewTables()
     if selector == 2:
-        
-    # if selector == 3:
-
-    # if selector == 4:
-
+        viewValues(input("Название таблицы - "))
+    if selector == 3:
+        insert()
+    if selector == 4:
+        delete()
     if selector == 5:
-        creation()
+        craft()
     if selector == 6:
-        drop()
-
+        Drop()
