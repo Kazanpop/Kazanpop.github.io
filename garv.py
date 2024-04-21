@@ -4,7 +4,7 @@ bd = SQL("sqlite:///vupsen.db")
 tdef = [" CHAR(250) "," INT "," FLOAT "]
 c = 'COL'
 # табличка хранящая все названия других таблиц
-# bd.execute("CREATE TABLE tabletos(NAME CHAR(50) NOT NULL)")
+bd.execute("CREATE TABLE tabletos(NAME CHAR(50) NOT NULL, COL INT)")
 
 def viewTables():
     tables = bd.execute("SELECT * FROM tabletos")
