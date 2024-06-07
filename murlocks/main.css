@@ -23,6 +23,7 @@
 .item-murlocks {
 	width: 31%;
 	min-height: 400px;
+	min-width: 300px;
 /*	background: beige;*/
 /*	border: 1PX SOLID BLACK;*/
 	margin: 15px 0px;
