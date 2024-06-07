@@ -1,0 +1,43 @@
+.hh h1{
+	font-size: 3rem;
+	text-align: center;
+	padding: 20px 0px ;
+}
+.flex {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+
+.w-90 {
+	width: 90%;
+}
+
+
+.m-auto {
+	margin: auto;
+}
+
+.item-murlocks {
+	width: 31%;
+	min-height: 400px;
+/*	background: beige;*/
+/*	border: 1PX SOLID BLACK;*/
+	margin: 15px 0px;
+	box-shadow: 0 10px 7px 3px black;
+}
+
+.murlocks-img{
+	width: 98%;
+	min-height: 260px;
+	height: auto;
+
+}
+
+.murlock-title {
+	font-size: 1.4rem;
+	text-align: center;
+	padding: 15px 0;
+}
