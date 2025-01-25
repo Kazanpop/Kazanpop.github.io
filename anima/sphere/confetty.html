@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   
+   
+   <script>
+       // задаём цвета
+       const COLORS = [
+  "red",
+  "blue",
+  "green",
+  "yellow",
+  "pink",
+  "purple",
+];
+
+document.addEventListener("click", (e) => {
+  // по клику будем создавать элемент на позиции курсора
+  const { clientX: x, clientY: y } = e;
+
+  const element = document.createElement("div");
+  element.style.width = "30px";
+  element.style.height = "30px";
+  element.style.border = "1px solid black";
+  // ставим блок на место курсора в момент клика
+  element.style.position = "absolute";
+  element.style.top = y + 'px';
+  element.style.left = x + 'px';
+  // сдвигаем блок вверх и влево на половины ширины и высоты (курсор - центр)
+  element.style.transform = "translate(-50%, -50%)";
+  // рандомим цвет из массива
+  element.style.backgroundColor =
+    COLORS[Math.floor(Math.random() * COLORS.length)];
+
+  document.body.appendChild(element);
+});
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>конфети</title>
+</head>
+<body>
+   
+   
+   <script>
+
+
+const COLORS = [
+  "red",
+  "blue",
+  "green",
+  "yellow",
+  "pink",
+  "purple",
+];
+// кол-во конфетти
+const PARTICLES_NUMBER = 20;
+
+function createParticle(x, y) {
+  const element = document.createElement("div");
+  element.style.width = "8px";
+  element.style.height = "8px";
+  element.style.border = "1px solid black";
+  // ставим блок на место курсора в момент клика
+  element.style.position = "absolute";
+  element.style.top = y + 'px';
+  element.style.left = x + 'px';
+  // сдвигаем блок вверх и влево на половины ширины и высоты (курсор - центр)
+  element.style.transform = "translate(-50%, -50%)";
+  // рандомим цвет из массива
+  element.style.backgroundColor =
+    COLORS[Math.floor(Math.random() * COLORS.length)];
+
+  const animation = element.animate(
+    [
+      {
+        transform: 'translate(' + (Math.random() - 0.5) * 500 + 'px,' + 
+          (Math.random() - 0.5) * 500 + 'px) rotate(' + Math.random() * 520 + 'deg)',
+        opacity: 0,
+      },
+    ],
+    1500
+  );
+
+  // удаляем объекты после анимации
+  animation.onfinish = () => element.remove();
+
+  document.body.appendChild(element);
+}
+
+document.addEventListener("click", (e) => {
+  // получаем координаты курсора по клику
+  const { clientX: x, clientY: y } = e;
+
+  // циклом почти мгновенно создаём все конфети
+  for (let i = 0; i < PARTICLES_NUMBER; i++) {
+    createParticle(x, y);
+  }
+});
+
+    </script>
+    
+</body>
+</html>
