@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		body {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		div {
+			width: 100px;
+			height: 100px;
+			background: grey;
+			font-size: 70px;
+		}
+	</style>
+</head>
+<body>
+
+	<div></div>
+	
+
+
+	<script>
+
+		function randomColor() {
+			let r = parseInt(Math.random() * 255);
+			let g = parseInt(Math.random() * 255);
+			let b = parseInt(Math.random() * 255);
+			return 'rgb(' + r + ',' + g + ',' + b + ')'
+		}
+
+		function randomText() {
+			let t = "ABCDEFGHIJKLMNOPQRSTUXYWZ"
+			return t[parseInt(Math.random() * 28)]
+		}
+		
+
+		let div = []
+		for (let i = 0; i < 80; i++){
+			div.push(document.createElement('div'))
+			div[i].style.background = randomColor();
+			div[i].textContent = randomText()
+		}
+		document.body.append(...div)
+
+
+
+		a = document.getElementsByTagName('div')
+		var t = 0;
+		function epileptic(){
+			if (t > 3){
+				t = 0
+				for (let i = 0; i < a.length; i++) {
+					a[i].style.background = randomColor();
+					a[i].style.color = randomColor();
+					a[i].textContent = randomText()
+				}
+			}
+			t++;
+			
+				requestAnimationFrame(epileptic)
+
+			
+		}	
+		epileptic()
+
+
+
+
+	</script>
+</body>
+</html>

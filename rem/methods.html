@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <div id="box1">
+        <p id="text1">Первый</p>
+        <p id="text2">второй</p>
+        <p id="text3">третий</p>
+        <p id="text4">четвертый</p>
+    </div>
+    
+    
+    
+    <script>
+    	// наш основной блок
+    	let box = document.getElementById('box1')
+        let p = document.getElementById('text3')
+
+         
+        // вставили в начало блока
+        box.prepend('я родился!');
+        // вставили в конец блока
+        box.append('я родился!');
+        // вставили после блока
+        box.after('я родился!');
+
+        // заменяет искомый элемент
+        p.replaceWith('я родился!');
+
+
+
+
+
+
+
+        let pCollection = []
+        for (let i = 0; i < 5; i++){
+            pCollection.push(document.createElement('p'))
+            pCollection[i].textContent = 'Новый параграф №' + i;
+            pCollection[i].id = 'p' + i;
+        }
+        // ... - spread деструктуризатор - особый оператор, позволяет
+        // присвоить массив сразу нескольким объектам
+        box.append(...pCollection)
+
+
+
+
+
+        // так можно изменить содержимое любого элемента
+        // box.innerHTML = 'стёр всё что смог))'
+        // пробуем +=
+
+
+
+
+        // так можно изменить текстовый конент текстовых блоков
+        document.getElementById('text1').textContent ='новый текст в первом p'
+
+
+
+
+        let newBlock = document.createElement('div')
+        newBlock.style.cssText = 'background: green;  \
+                                  width: 150px;  \
+                                  height: 200px;  \
+                                  margin: auto;  \
+                                '
+        document.body.appendChild(newBlock)
+
+
+
+
+        let t1 = document.getElementById('text4')
+        getstyle = getComputedStyle(t1);
+        console.log(getstyle.color);
+
+        t1.style.color = 'red'
+
+        console.log(getstyle.color);
+        
+
+
+
+
+
+
+    </script>
+    
+    
+    
+</body>
+</html>

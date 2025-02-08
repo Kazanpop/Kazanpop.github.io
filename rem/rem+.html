@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   
+   
+   
+   <p id="text1">Первый</p>
+   <p id="text2">второй</p>
+   <p id="text3">третий</p>
+   <p id="text4">четвертый</p>
+   
+   
+   
+   
+   
+   
+   
+    <script>
+        // пример удаления всех элементов данного тега
+        let p = document.getElementsByTagName('p');
+        while (p.length){
+            //пока есть элементы - их индексы будут перебираться
+            document.body.removeChild(p[0])
+        }
+    </script>
+    
+</body>
+</html>

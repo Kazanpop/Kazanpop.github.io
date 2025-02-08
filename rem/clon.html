@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <div id="box1">
+        <p id="text1">Первый</p>
+        <p id="text2">второй</p>
+        <p id="text3">третий</p>
+        <p id="text4">четвертый</p>
+    </div>
+    
+    
+    
+    <script>
+    	//true - клон копирует содержимое оригинала
+    	let clone = document.getElementById('box1').cloneNode(true);
+    	clone.id = 'box2'
+
+    	document.body.insertBefore(clone, document.getElementById('box1'))
+
+
+
+    </script>
+    
+    
+    
+</body>
+</html>
