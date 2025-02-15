@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>scroll</title>
+	<style>
+		body {
+			height: 2000px;
+		}
+	</style>
+	
+</head>
+<body>
+	
+	<script>
+		// событие скролл позволяет контролировать скролл страницы
+		counter = 0
+		document.addEventListener('scroll', function() {
+			counter++;
+			console.log('прокрутка пошла: ', counter);
+		}, false)
+		
+	</script>
+</body>
+</html>

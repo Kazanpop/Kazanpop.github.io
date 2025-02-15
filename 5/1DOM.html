@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Шестое занятие</title>
+	<link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+	<style>
+		p {
+			font-size: 32px;
+			font-family: 'M PLUS Rounded 1c', sans-serif;
+			line-height: 1.5;
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	
+	<img src="old.jpg" data-src='new.jpg' id='image1' alt="">
+	<script>
+	// полная картинка подгрузится только тогда, когда загрузится вся страница (пример с таймером в 2с)
+
+	// hasAttribute - позволяет проверить - есть ли на объекте данный атрибут
+	// getAttribute - получает от объекта значение данного атрибута
+
+
+	document.addEventListener("DOMContentLoaded", function(event) {
+		setInterval(
+		function(){
+					console.log('Страница загружена');
+				var img = document.getElementById('image1');
+				if (img.hasAttribute('data-src')) {
+					var data = img.getAttribute('data-src');
+					console.log('Старый путь у картинки: ' + img.getAttribute('src'));
+					img.setAttribute('src', data);
+					console.log('Новый путь у картинки: ' + img.getAttribute('src'));
+					img.removeAttribute('data-src');
+				}
+			}, 2000)
+	})
+		
+	</script>
+</body>
+</html>

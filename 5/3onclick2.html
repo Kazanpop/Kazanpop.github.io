@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Оптимизация onclick</title>
+	<style>
+		.button {
+			font-size: 20px;
+			padding: 20px 40px;
+			background: linear-gradient(to right, #b100ff, orange);
+			border: none;
+			box-shadow: 0 0 10px 0 rgba(177,0,255,0.7);
+		}
+	</style>
+</head>
+<body>
+	<h1>Самый простой обработчик js - onclick</h1>
+	<button id="btn">Кнопочка</button>
+	<button id="btn2">Кнопочка</button>
+	<script>
+		let bg1 = 'linear-gradient(to left, #4776e6, #8e54e9)'
+		let bs1 = '0 0 10px 0 #4776e6';
+		let bg2 = 'linear-gradient(to right, #8a2387, #e94057, #f27121)';
+		let bs2 = '0 0 10px 0 #8a2387';
+
+
+		let btn = document.getElementById('btn')
+		btn.className = 'button' //задаём класс для кнопки)
+		btn.count = 0
+		btn.onclick = function() {
+			this.count++;
+			console.log('Нажали на кнопочку x' + this.count);
+			
+			if (this.count % 2){
+				changeBG(this, bg1, bs1)
+			}
+			else {
+				changeBG(this, bg2, bs2)
+			}
+		};
+
+		
+
+
+		// оптимизируем changeBG чтобы работало для любого тега)
+		
+		function changeBG(tag,bg,bs) {
+			tag.style.background = bg;
+			tag.style.boxShadow = bs;
+		}
+
+		
+		
+	</script>
+</body>
+</html>

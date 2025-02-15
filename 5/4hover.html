@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>mouseover</title>
+	<style>
+		.button {
+			font-size: 20px;
+			padding: 20px 40px;
+			background: linear-gradient(to right, #b100ff, orange);
+			border: none;
+			box-shadow: 0 0 10px 0 rgba(177,0,255,0.7);
+		}
+	</style>
+</head>
+<body>
+	<h1>mouseover</h1>
+
+	<button id="btn2">Кнопочка</button>
+	<script>
+
+		let bg1 = 'linear-gradient(to left, #4776e6, #8e54e9)'
+		let bs1 = '0 0 10px 0 #4776e6';
+		let bg2 = 'linear-gradient(to right, #8a2387, #e94057, #f27121)';
+		let bs2 = '0 0 10px 0 #8a2387';
+		function changeBG(tag,bg,bs) {
+			tag.style.background = bg;
+			tag.style.boxShadow = bs;
+		}
+
+		let btn2 = document.getElementById('btn2')
+		btn2.className = 'button'
+		btn2.count = 0
+		// сам обработчик
+		btn2.onmouseover = function () {
+			this.count++;
+			console.log('навели мышку');
+			if (this.count % 2){
+				changeBG(this, bg1, bs1)
+			}
+			else {
+				changeBG(this, bg2, bs2)
+			}
+		}
+
+
+
+		// btn2.onmousedown = function(){
+		// 	console.log('нажали и держим');
+		// }
+
+		// btn2.onmouseup = function(){
+		// 	console.log('отпустили мышку');
+		// }
+
+		// // сделаем ещё пару обработчиков
+		// btn2.onmousedown = function(){
+		// 	console.log('нажали!!!!!!!!!!!!!!');
+		// }
+
+		// btn2.onmouseup = function(){
+		// 	console.log('отпустили!!!!!!!!!!!!!!!!');
+		// }
+
+		// одновременно может работать только один обработчик (обычно последний в коде)!
+		// но есть выход) EventListener
+
+		btn2.addEventListener('click', function(){
+			console.log('кликнули по кнопке?');
+		})
+
+		btn2.addEventListener('click', function(){
+			console.log('я подстрахую соседа');
+		})
+
+
+
+
+		
+		
+	</script>
+</body>
+</html>

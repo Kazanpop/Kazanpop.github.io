@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>ленивые изображения</title>
+	<style>
+		body {
+			min-height: 1000px;
+			background-color: #eee;
+			margin: 0;
+		}
+
+		#box {
+			width: 95%;
+			max-width: 1000px;
+			box-sizing: border-box;
+			margin: auto;
+			background-color: #fff;
+			padding: 30px;
+		}
+
+		#h1 {
+			margin-top: 0;
+
+		}
+
+		img {
+			width: 100%;
+			display: block;
+			transition: filter 0.2s ease;
+		}
+		/*сначала изображения будут заблюрены*/
+		.blur {
+			filter: blur(5px);
+		}
+
+	</style>
+</head>
+<body>
+	<div id="box">
+		<h1 id="h1">Апельсин</h1>
+		<img class='blur' src="orange1-blur.jpg" data-src='orange1.jpeg' alt="Апельсин">
+		<p id="text1">
+			Апельсин (лат. Cītrus × sinēnsis) — плодовое дерево; вид рода Цитрус семейства Рутовые; а также плод этого дерева.
+		</p>
+		<img class='blur' src="orange2-blur.jpg" data-src='orange2.jpeg' alt="Апельсин">
+		<p id="text2">
+			Растение культивировалось в Китае ещё за 2,5 тысячи лет до н. э. В Европу было привезено португальскими мореплавателями. После этого быстро распространилась мода на выращивание апельсиновых деревьев; для этого стали строить специальные стеклянные сооружения, названные оранжереями (от фр. orange — «апельсин»). Апельсиновые деревья растут по всему побережью Средиземного моря (а также в Центральной Америке).
+		</p>
+		<img class='blur' src="orange3-blur.jpg" data-src='orange3.jpeg' alt="Апельсин">
+	</div>
+	<script>
+		// засунули весь скрипт в ДОМ обработчик(он прогрузится только когда загрузится вся страница, что сильно облегчает прогрузку)
+		document.addEventListener('DOMContentLoaded', function() {
+			let counter = 0,
+			// получаем все объекты картинок с классом blur в массив (slice - делит коллецкию на элементы массива 
+			// call - типа прозванивает коллекцию)
+			lazyImages = [].slice.call(document.querySelectorAll('.blur'));
+			// теперь можно вызывать forEach
+
+
+
+			function lazyLoad() {
+				lazyImages.forEach(function(lazy) {
+					counter++;
+					console.log(counter);
+					// getBoundingClientRect() получает координаты объекта
+					if (lazy.getBoundingClientRect().top <= window.innerHeight) {
+						if (lazy.hasAttribute('data-src')) {
+							// выводим если есть атрибут видимой картинки
+							console.log('Уиииииииииии');
+							let data = lazy.getAttribute('data-src');
+							lazy.setAttribute('src', data);
+							// после удаления данного атрибута условие больше выполняться не будет
+							lazy.removeAttribute('data-src');
+							lazy.classList.remove('blur');
+						}
+						// фильтруем изображения, убираем из массива отображённые
+						lazyImages = lazyImages.filter(function(image) {
+							return image != lazy;
+						});
+					}
+					// удаляем обработчик если изображения загрузились
+					if (lazyImages.length == 0) {
+						document.removeEventListener('scroll', lazyLoad);	
+					}
+				});
+
+
+			}
+			document.addEventListener('scroll', lazyLoad);		
+		});
+	</script>
+</body>
+</html>
