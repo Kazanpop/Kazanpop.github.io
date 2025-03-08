@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    
+    <style>
+
+        #r1, #r2, #r3, #r4{
+          border: 1px solid red;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+        }
+
+        #r1 {
+          width: 1000px;
+          height: 1000px;
+          
+        }
+
+        #r2 {
+          width: 800px;
+          height: 800px;
+        }
+
+        #r3 {
+          width: 500px;
+          height: 500px;
+        }
+
+        #r4 {
+          width: 300px;
+          height: 300px;
+          
+        }
+
+        .cirkle1 {
+          width: 50px;
+          height: 50px;
+          background: green;
+          border-radius: 50%;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+        }
+
+    </style>
+</head>
+<body>
+   
+
+
+
+   <div id="r1">
+     <div class="cirkle1"></div>
+     <div id="r2">
+       <div class="cirkle1"></div>
+       <div id="r3">
+         <div class="cirkle1"></div>
+         <div id="r4">
+           <div class="cirkle1"></div>
+         </div>
+       </div>
+     </div>
+   </div>
+   
+   
+   
+   <script src="spinner.js"></script>
+    
+</body>
+</html>
