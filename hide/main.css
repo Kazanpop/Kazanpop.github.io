@@ -1,0 +1,70 @@
+.hide{
+	left: -40px;
+	animation:textt 1s;
+}
+
+@keyframes textt {
+
+	from { left: 4px;}
+
+	to {left: -40px;}
+
+}
+
+.show {
+	left: 4px;
+	animation:texttt 1s;
+}
+
+@keyframes texttt {
+	from { left: -40px;}
+	to {left: 4px;}
+}
+
+
+body{
+    min-width: 300px;
+}
+
+.block {
+    position: fixed;
+    margin-top: 152px;
+    z-index: 100000;
+    background: red;
+}
+
+.icon {
+	background: green;
+	width: 40px;
+	height: 40px;
+	margin: 3px;
+}
+
+
+#iks {
+    font-weight: 900;
+    margin-left: 40px;
+    font-size: calc(30px - 1vw);
+    cursor: pointer;    
+}
+
+
+
+
+
+
+.korobka {
+	
+	overflow: hidden;
+	transition: all 3s;
+	background: beige;
+}
+
+.net {
+	max-height: 1rem;
+}
+
+.da {
+	max-height: 100px;
+	overflow: scroll;
+}
