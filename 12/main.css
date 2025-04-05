@@ -1,0 +1,15 @@
+body {
+	min-height: 2000px;
+}
+
+.dropka {
+	position: relative;
+	width: 60px;
+	background: brown;
+}
+
+.dropper {
+	position: absolute;
+	display: none;
+	right: 20px;
+}
