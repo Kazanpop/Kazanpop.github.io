@@ -1,0 +1,38 @@
+
+.tablichka {
+
+	border: 1px solid black;
+	border-collapse: collapse; 
+	
+}
+
+
+th {
+	padding: 10px;
+	border: 1px solid grey;
+}
+
+td {
+	padding: 5px 7px;
+	border: 1px solid grey;
+	font-size: 14px;
+	min-height: 2rem;
+}
+.rod-table {
+	margin: auto;
+	position: relative;
+	background: red;
+}
+
+.add {
+	width: 120px;
+	position: absolute;
+	bottom: -36px;
+	right: 150px;
+}
+.add2 {
+	width: 120px;
+	position: absolute;
+	bottom: -36px;
+	right: 0;
+}
