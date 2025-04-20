@@ -1,0 +1,87 @@
+@media screen and (width < 576px) {
+
+}
+
+@media screen and (width >= 576px) {
+
+}
+
+@media screen and (width >= 768px) {
+
+}
+
+@media screen and (width >= 992px) {
+  .position-absolute-lg {
+    position: absolute;
+  }
+	.foot-logo {
+		margin-bottom: 139px;
+	}
+
+  .burmalda {
+    min-height: 1150px;
+  }
+}
+
+@media screen and (width >= 1200px) {
+
+	 #r1 {
+          width: 1055px;
+          height: 1055px;
+        }
+
+        #r2 {
+          width: 917px;
+          height: 917px;
+        }
+
+        #r3 {
+          width: 760px;
+          height: 760px;
+        }
+
+        #r4 {
+          width: 622px;
+          height: 622px;
+        }	
+        #r5 {
+          width: 478px;
+          height: 478px;
+        }
+
+        #r5 img {
+        	margin-left: 50px;
+        }
+
+        .cirkle1 {
+          width: 101px;
+          height: 101px;
+          background: red;
+          border-radius: 50%;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+.gr {
+	background: linear-gradient(to right, #B0B0B2, #18181B);
+	padding: 1px;
+}
+
+.gr div{
+	width: 101px;
+	height: 101px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+}
+
+@media screen and (width >= 1400px) {
+
+}	
